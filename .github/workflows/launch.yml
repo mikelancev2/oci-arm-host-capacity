@@ -21,7 +21,7 @@ jobs:
 
       - name: Save private key to file
         run: |
-          printf '%s' "$OCI_PRIVATE_KEY_CONTENT" > /home/runner/private_key.pem
+          echo "$OCI_PRIVATE_KEY_CONTENT" > /home/runner/private_key.pem
           chmod 600 /home/runner/private_key.pem
         env:
           OCI_PRIVATE_KEY_CONTENT: ${{ secrets.OCI_PRIVATE_KEY }}
